@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Register Student</h1>
+<form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="field">{{ form.admission_number.label }} {{ form.admission_number(class_='input') }}</div>
+    <div class="field">{{ form.first_name.label }} {{ form.first_name(class_='input') }}</div>
+    <div class="field">{{ form.last_name.label }} {{ form.last_name(class_='input') }}</div>
+    <div class="field">{{ form.gender.label }} {{ form.gender(class_='input') }}</div>
+    <div class="field">{{ form.class_id.label }} {{ form.class_id(class_='input') }}</div>
+    {{ form.submit(class_='btn') }}
+</form>
+{% endblock %}

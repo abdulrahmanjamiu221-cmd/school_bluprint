@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Dashboard</h1>
+<p>Welcome, {{ current_user.full_name }}.</p>
+<div class="stats-grid">
+    <div class="stat-card">
+        <span>Students</span>
+        <strong>{{ total_students }}</strong>
+    </div>
+    <div class="stat-card">
+        <span>Teachers</span>
+        <strong>{{ total_teachers }}</strong>
+    </div>
+    <div class="stat-card">
+        <span>Sessions</span>
+        <strong>{{ total_sessions }}</strong>
+    </div>
+    <div class="stat-card">
+        <span>Subjects</span>
+        <strong>{{ total_subjects }}</strong>
+    </div>
+    <div class="stat-card">
+        <span>Payments</span>
+        <strong>{{ total_payments }}</strong>
+    </div>
+    <div class="stat-card">
+        <span>Results</span>
+        <strong>{{ total_results }}</strong>
+    </div>
+</div>
+
+{% if school %}
+<div class="panel">
+    <h2>{{ school.name }}</h2>
+    <p>{{ school.address }}</p>
+    <p><strong>Code:</strong> {{ school.code }}</p>
+</div>
+{% endif %}
+{% endblock %}

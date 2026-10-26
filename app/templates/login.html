@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="login-shell">
+    <div class="login-card">
+        <h1>SchoolResult Pro</h1>
+        <p class="muted">Secure school result management</p>
+        <form method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="field">
+                {{ form.email.label }}
+                {{ form.email(class_='input') }}
+                {% for error in form.email.errors %}<small class="error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="field">
+                {{ form.password.label }}
+                {{ form.password(class_='input') }}
+                {% for error in form.password.errors %}<small class="error">{{ error }}</small>{% endfor %}
+            </div>
+            {{ form.submit(class_='btn') }}
+        </form>
+        <p class="demo-note">Demo account: admin@schoolresultpro.com / admin123</p>
+    </div>
+</div>
+{% endblock %}

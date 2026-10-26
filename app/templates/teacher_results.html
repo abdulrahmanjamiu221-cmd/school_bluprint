@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Assigned Classes and Subjects</h1>
+{% if assignments %}
+<ul class="list">
+    {% for assignment in assignments %}
+    <li>
+        <strong>{{ assignment.subject.name }}</strong> - {{ assignment.school_class.name }}
+        <a href="{{ url_for('teacher.grade_assignment', assignment_id=assignment.id) }}" class="link-btn">Add Result</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No assignments exist for your account yet.</p>
+{% endif %}
+{% endblock %}

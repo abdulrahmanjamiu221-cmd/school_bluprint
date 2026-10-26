@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Payment Records</h1>
+<form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="field">{{ form.student_id.label }} {{ form.student_id(class_='input') }}</div>
+    <div class="field">{{ form.reference.label }} {{ form.reference(class_='input') }}</div>
+    <div class="field">{{ form.amount.label }} {{ form.amount(class_='input') }}</div>
+    <div class="field">{{ form.method.label }} {{ form.method(class_='input') }}</div>
+    <div class="field">{{ form.notes.label }} {{ form.notes(class_='input') }}</div>
+    {{ form.submit(class_='btn') }}
+</form>
+
+{% if payments %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Reference</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.student.first_name }} {{ payment.student.last_name }}</td>
+            <td>{{ payment.reference }}</td>
+            <td>{{ payment.amount }}</td>
+            <td>{{ payment.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}
+{% endblock %}

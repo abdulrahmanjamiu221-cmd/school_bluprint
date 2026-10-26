@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Enter Subject Result</h1>
+<p><strong>{{ assignment.subject.name }}</strong> | {{ assignment.school_class.name }}</p>
+<form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="field">{{ form.ca.label }} {{ form.ca(class_='input') }}</div>
+    <div class="field">{{ form.test.label }} {{ form.test(class_='input') }}</div>
+    <div class="field">{{ form.assignment.label }} {{ form.assignment(class_='input') }}</div>
+    <div class="field">{{ form.practical.label }} {{ form.practical(class_='input') }}</div>
+    <div class="field">{{ form.exam.label }} {{ form.exam(class_='input') }}</div>
+    <div class="field">{{ form.remarks.label }} {{ form.remarks(class_='input') }}</div>
+    {{ form.submit(class_='btn') }}
+</form>
+{% endblock %}

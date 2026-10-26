@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Create School</h1>
+<form method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="field">{{ form.name.label }} {{ form.name(class_='input') }}</div>
+    <div class="field">{{ form.code.label }} {{ form.code(class_='input') }}</div>
+    <div class="field">{{ form.address.label }} {{ form.address(class_='input') }}</div>
+    <div class="field">{{ form.contact_email.label }} {{ form.contact_email(class_='input') }}</div>
+    <div class="field">{{ form.phone.label }} {{ form.phone(class_='input') }}</div>
+    {{ form.submit(class_='btn') }}
+</form>
+{% endblock %}
